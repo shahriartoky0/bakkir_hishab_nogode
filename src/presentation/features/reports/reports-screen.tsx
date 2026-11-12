@@ -1,4 +1,4 @@
-import { Download, FileBarChart } from "lucide-react";
+import { Download } from "@/presentation/components/icons";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { EmptyState } from "../../components/empty-state";
@@ -67,7 +67,7 @@ export async function ReportsScreen({ kind: k, from, to }: { kind?: string; from
       </Card>
 
       {table.display.length === 0 ? (
-        <EmptyState icon={FileBarChart} title={t("empty")} />
+        <EmptyState illustration="chart-up" title={t("empty")} />
       ) : (
         <Card className="py-0">
           <Table className="[&_td:first-child]:pl-4 [&_td:last-child]:pr-4 [&_th]:h-11 [&_th]:text-xs [&_th]:font-semibold [&_th]:text-muted-foreground [&_th:first-child]:pl-4 [&_th:last-child]:pr-4 sm:[&_td:first-child]:pl-5 sm:[&_th:first-child]:pl-5">

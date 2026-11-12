@@ -1,6 +1,6 @@
 "use client";
 
-import { RotateCcw, Search } from "lucide-react";
+import { RotateCcw, Search } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import { setTranslationOverrideAction } from "../../actions/translations";

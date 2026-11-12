@@ -1,6 +1,6 @@
 "use client";
 
-import { Trash2 } from "lucide-react";
+import { Trash2 } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useId, useMemo } from "react";
 import { buildTree, type Category } from "@/domain/catalog/category";

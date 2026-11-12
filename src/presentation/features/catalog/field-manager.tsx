@@ -1,6 +1,14 @@
 "use client";
 
-import { Archive, ArchiveRestore, ChevronDown, ChevronUp, Pencil, Plus, Trash2 } from "lucide-react";
+import {
+  Archive,
+  ArchiveRestore,
+  ChevronDown,
+  ChevronUp,
+  Pencil,
+  Plus,
+  Trash2,
+} from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import {

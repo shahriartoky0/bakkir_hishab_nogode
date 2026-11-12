@@ -1,6 +1,6 @@
 "use client";
 
-import { Gem } from "lucide-react";
+import { Gem } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { applyStarterSetAction } from "../../actions/settings";
 import { Button } from "../../components/ui/button";

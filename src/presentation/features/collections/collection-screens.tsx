@@ -1,21 +1,11 @@
-import {
-  AlertTriangle,
-  CalendarCheck,
-  CalendarClock,
-  ChevronRight,
-  HandCoins,
-  PartyPopper,
-  TrendingUp,
-  Users,
-  Wallet,
-  type LucideIcon,
-} from "lucide-react";
+import { AlertTriangle, CalendarClock, ChevronRight, Users, Wallet } from "@/presentation/components/icons";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import type { CollectionRow } from "@/application/ports/queries";
 import { container } from "@/composition/container";
 import { ShopDate } from "@/domain/shared/shop-date";
 import { EmptyState } from "../../components/empty-state";
+import { Illustration, type IllustrationName } from "../../components/illustration";
 import { PageHeader } from "../../components/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { getFormat } from "../../lib/format-server";
@@ -59,13 +49,13 @@ export async function TodayScreen() {
 }
 
 function Stat({
-  icon: Icon,
+  illustration,
   label,
   value,
   tone,
   href,
 }: {
-  icon: LucideIcon;
+  illustration: IllustrationName;
   label: string;
   value: string;
   tone: "danger" | "success" | "gold";
@@ -80,13 +70,13 @@ function Stat({
     >
       <span
         className={cn(
-          "flex size-9 items-center justify-center rounded-xl",
-          tone === "danger" && "bg-destructive-soft text-destructive",
-          tone === "success" && "bg-success-soft text-success",
-          tone === "gold" && "bg-gold-soft text-gold",
+          "flex size-11 items-center justify-center rounded-xl",
+          tone === "danger" && "bg-destructive-soft",
+          tone === "success" && "bg-success-soft",
+          tone === "gold" && "bg-gold-soft",
         )}
       >
-        <Icon className="size-[18px]" aria-hidden />
+        <Illustration name={illustration} size={28} eager />
       </span>
       <span className="text-xs leading-snug text-muted-foreground">{label}</span>
       <span className="money mt-auto font-heading text-xl leading-none font-bold">{value}</span>
@@ -175,10 +165,10 @@ export async function DashboardScreen({ userName }: { userName: string }) {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <Stat icon={HandCoins} label={t("collectedToday")} value={fmt.money(d.collectedTodayMinor)} tone="success" />
-          <Stat icon={HandCoins} label={t("collectedMonth")} value={fmt.money(d.collectedMonthMinor)} tone="success" />
-          <Stat icon={TrendingUp} label={t("newCreditMonth")} value={fmt.money(d.newCreditMonthMinor)} tone="gold" />
-          <Stat icon={AlertTriangle} label={t("totalOverdue")} value={fmt.money(d.totalOverdueMinor)} tone="danger" href="/customers?filter=overdue" />
+          <Stat illustration="money-bag" label={t("collectedToday")} value={fmt.money(d.collectedTodayMinor)} tone="success" />
+          <Stat illustration="coin" label={t("collectedMonth")} value={fmt.money(d.collectedMonthMinor)} tone="success" />
+          <Stat illustration="chart-up" label={t("newCreditMonth")} value={fmt.money(d.newCreditMonthMinor)} tone="gold" />
+          <Stat illustration="alarm" label={t("totalOverdue")} value={fmt.money(d.totalOverdueMinor)} tone="danger" href="/customers?filter=overdue" />
         </div>
       </div>
 
@@ -207,7 +197,7 @@ export async function DashboardScreen({ userName }: { userName: string }) {
         <section className="space-y-3">
           <SectionTitle title={t("topOverdue")} href="/today" linkLabel={t("seeAll")} />
           {topOverdue.length === 0 ? (
-            <EmptyState icon={PartyPopper} title={t("noOverdue")} />
+            <EmptyState illustration="party" title={t("noOverdue")} />
           ) : (
             <ul className="space-y-2">
               {topOverdue.map((r) => (
@@ -219,7 +209,7 @@ export async function DashboardScreen({ userName }: { userName: string }) {
         <section className="space-y-3">
           <SectionTitle title={t("upcoming")} href="/today" linkLabel={t("seeAll")} />
           {upcoming.length === 0 ? (
-            <EmptyState icon={CalendarCheck} title={t("noUpcoming")} />
+            <EmptyState illustration="check" title={t("noUpcoming")} />
           ) : (
             <ul className="space-y-2">
               {upcoming.map((r) => (

@@ -1,4 +1,4 @@
-import { Ban, Banknote, FileText, History, MessageSquare, Plus, ReceiptText } from "lucide-react";
+import { Ban, Banknote, FileText, MessageSquare, Plus } from "@/presentation/components/icons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
@@ -124,7 +124,7 @@ export async function CustomerProfileScreen({ id }: { id: string }) {
             label: t("tabs.dues"),
             content:
               profile.openSales.length === 0 && otherDues.length === 0 ? (
-                <EmptyState icon={ReceiptText} title={t("noDues")} />
+                <EmptyState illustration="receipt" title={t("noDues")} />
               ) : (
                 <ul className="space-y-2">
                   {profile.openSales.map((s) => (
@@ -174,7 +174,7 @@ export async function CustomerProfileScreen({ id }: { id: string }) {
 async function LedgerTable({ entries, fmt }: { entries: LedgerEntry[]; fmt: Fmt }) {
   const t = await getTranslations("customers.ledger");
   const te = await getTranslations("enums");
-  if (entries.length === 0) return <EmptyState icon={History} title={t("empty")} />;
+  if (entries.length === 0) return <EmptyState illustration="scroll" title={t("empty")} />;
   const href = (e: LedgerEntry) => (e.kind === "sale" ? `/sales/${e.refId}` : e.kind === "payment" ? `/payments/${e.refId}` : null);
   const detail = (e: LedgerEntry) =>
     !e.detail
@@ -219,7 +219,7 @@ async function LedgerTable({ entries, fmt }: { entries: LedgerEntry[]; fmt: Fmt 
 async function FollowUpList({ items, fmt }: { items: FollowUpView[]; fmt: Fmt }) {
   const t = await getTranslations("followUps");
   const te = await getTranslations("enums");
-  if (items.length === 0) return <EmptyState icon={MessageSquare} title={t("empty")} />;
+  if (items.length === 0) return <EmptyState illustration="speech" title={t("empty")} />;
   return (
     <ul className="divide-y rounded-xl border bg-card">
       {items.map((f) => (

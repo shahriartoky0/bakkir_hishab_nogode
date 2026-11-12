@@ -1,10 +1,17 @@
-import { AlertTriangle, CheckCircle2, Circle, Clock, XCircle, type LucideIcon } from "lucide-react";
+import {
+  AlertTriangle,
+  CheckCircle2,
+  Circle,
+  Clock,
+  XCircle,
+  type AppIcon,
+} from "@/presentation/components/icons";
 import type { ReactNode } from "react";
 import { cn } from "../lib/utils";
 
 export type Tone = "success" | "warning" | "danger" | "neutral" | "info";
 
-const TONES: Record<Tone, { cls: string; icon: LucideIcon }> = {
+const TONES: Record<Tone, { cls: string; icon: AppIcon }> = {
   success: { cls: "bg-success-soft text-success border-success/30", icon: CheckCircle2 },
   warning: { cls: "bg-warning-soft text-warning border-warning/30", icon: Clock },
   danger: { cls: "bg-destructive-soft text-destructive border-destructive/30", icon: AlertTriangle },
@@ -13,7 +20,7 @@ const TONES: Record<Tone, { cls: string; icon: LucideIcon }> = {
 };
 
 /** Status is never shown by colour alone: every badge has an icon and text. */
-export function StatusBadge({ tone, children, className, icon }: { tone: Tone; children: ReactNode; className?: string; icon?: LucideIcon }) {
+export function StatusBadge({ tone, children, className, icon }: { tone: Tone; children: ReactNode; className?: string; icon?: AppIcon }) {
   const { cls, icon: DefaultIcon } = TONES[tone];
   const Icon = icon ?? DefaultIcon;
   return (

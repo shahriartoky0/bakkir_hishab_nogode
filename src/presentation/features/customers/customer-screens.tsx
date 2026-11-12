@@ -1,4 +1,4 @@
-import { UserPlus } from "lucide-react";
+import { UserPlus } from "@/presentation/components/icons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";

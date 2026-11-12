@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { cn } from "../../lib/utils";
 import { BrandMark } from "../brand-mark";
+import { Illustration } from "../illustration";
 import { isActive, NAV_ITEMS } from "./nav-items";
 
 /** Desktop sidebar (md+): brand, the primary "New sale" action, then navigation. */
@@ -38,7 +39,7 @@ export function Sidebar() {
 
       <nav aria-label={t("nav.main")} className="flex-1 overflow-y-auto px-3">
         <ul className="space-y-1">
-          {items.map(({ key, href, icon: Icon }) => {
+          {items.map(({ key, href, illustration }) => {
             const active = isActive(pathname, href);
             return (
               <li key={key}>
@@ -51,7 +52,12 @@ export function Sidebar() {
                   )}
                 >
                   {active && <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-brand-gold" aria-hidden />}
-                  <Icon className="size-5" aria-hidden />
+                  <Illustration
+                    name={illustration}
+                    size={24}
+                    eager
+                    className={cn("transition-[filter,opacity] duration-150", !active && "opacity-85 grayscale-[30%]")}
+                  />
                   <span>{t(`nav.${key}`)}</span>
                 </Link>
               </li>

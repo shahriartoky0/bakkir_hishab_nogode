@@ -1,4 +1,4 @@
-import { ImageOff, User } from "lucide-react";
+import { ImageOff, User } from "@/presentation/components/icons";
 import { cn } from "../lib/utils";
 
 /** Small square thumbnail from a presigned URL, with an icon fallback. */

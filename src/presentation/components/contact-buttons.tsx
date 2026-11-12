@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle, Phone } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { cn } from "../lib/utils";
 import { Button } from "./ui/button";

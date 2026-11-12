@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageSquarePlus } from "lucide-react";
+import { MessageSquarePlus } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
 import { FOLLOW_UP_CHANNELS, FOLLOW_UP_OUTCOMES, type FollowUpChannel, type FollowUpOutcome } from "@/domain/followup/follow-up";

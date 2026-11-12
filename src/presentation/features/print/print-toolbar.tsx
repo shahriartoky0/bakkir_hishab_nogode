@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Printer } from "lucide-react";
+import { ArrowLeft, Printer } from "@/presentation/components/icons";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";

@@ -1,4 +1,4 @@
-import { Banknote, Pencil, Printer } from "lucide-react";
+import { Banknote, Pencil, Printer } from "@/presentation/components/icons";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";

@@ -1,6 +1,14 @@
 "use client";
 
-import { Archive, ArchiveRestore, Ban, CircleCheck, MoreVertical, Pencil, Scale } from "lucide-react";
+import {
+  Archive,
+  ArchiveRestore,
+  Ban,
+  CircleCheck,
+  MoreVertical,
+  Pencil,
+  Scale,
+} from "@/presentation/components/icons";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { setCustomerStatusAction } from "../../actions/customers";

@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, Eye, Loader2, Trash2 } from "lucide-react";
+import { AlertTriangle, Eye, Loader2, Trash2 } from "@/presentation/components/icons";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useState, useTransition } from "react";

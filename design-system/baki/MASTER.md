@@ -11,14 +11,20 @@ Source of truth for every screen. Produced with the **UI/UX Pro Max** skill
 | Product | Shop credit ledger: invoice/billing + collections (single owner, counter use) |
 | Matched rows | `products.csv` #105 *Invoice & Billing Tool*, #42 *Banking/Traditional Finance* |
 | Audience/context | Jewelry shop owner, phone at the counter, sometimes desktop; Bangla first |
-| Stack | Next.js 16 + Tailwind v4 + shadcn/ui (Radix) + lucide icons |
+| Stack | Next.js 16 + Tailwind v4 + shadcn/ui (Radix) + Phosphor icons (duotone) + Fluent Emoji 3D illustrations |
 
 ## Style
 
 - **Minimalism & Swiss Style + Flat Design** (`ui-reasoning.csv` #105, #42)
 - Trust & authority, with no decoration for its own sake. Flat surfaces with 1px borders; shadows only on overlays and the floating "New sale" button.
 - **Effects:** colour-shift hover, **150ms** transitions (200ms for overlays), no 3D, no gradients, no glass.
-- **Anti-patterns (must avoid):** playful styling, excessive decoration, complex shadows, purple/pink "AI" gradients, emoji used as icons.
+- **Anti-patterns (must avoid):** excessive decoration, complex shadows, purple/pink "AI" gradients, emoji *characters* used as icons, 3D illustrations inside buttons/badges or below 24px.
+
+## Iconography (updated 2026-11-12)
+
+- **Controls and inline glyphs** (buttons, menus, badges, form adornments): Phosphor via `src/presentation/components/icons.tsx` only. Pictograms default to `duotone`; pure glyphs (carets, X, check, plus, spinner) use `bold`. Never import `@phosphor-icons/react` directly.
+- **Hero spots** (nav, More tiles, dashboard stat tiles, empty and error states): Microsoft Fluent Emoji 3D through `<Illustration name size />` (`src/presentation/components/illustration.tsx`), vendored in `public/illustrations/fluent/` (MIT, pinned commit in `SOURCE.md`). Use at 24px or larger, set on a soft tinted tile. They're decorative (`aria-hidden`), so a text label always carries the meaning.
+- The brand mark stays the custom inline SVG (`brand-mark.tsx`).
 
 ## Colour tokens (refined 2026-11-12: warm stone neutrals + navy + gold)
 
@@ -72,7 +78,7 @@ Status is **never colour-only**: every status badge carries text and an icon.
 
 ## Pre-delivery checklist (from `references/pro-rules.md`)
 
-SVG icons from one family (lucide), no emoji · ≥44px targets · visible focus ring (gold) ·
+Glyphs from one family (Phosphor via icons.tsx), Fluent 3D only via <Illustration> in hero spots · ≥44px targets · visible focus ring (gold) ·
 4.5:1 text contrast in light **and** dark · status not by colour alone · labels on all fields ·
 decorative icons `aria-hidden` · icon-only buttons have `aria-label` · 360px layout without
 horizontal scroll · reduced motion respected · both languages checked.

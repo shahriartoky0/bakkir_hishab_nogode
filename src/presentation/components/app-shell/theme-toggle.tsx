@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Moon, Sun } from "lucide-react";
+import { Monitor, Moon, Sun } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { Button } from "../ui/button";

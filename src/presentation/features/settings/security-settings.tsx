@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LogOut } from "lucide-react";
+import { LogOut } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { changePasswordAction, signOutEverywhereAction } from "../../actions/account";

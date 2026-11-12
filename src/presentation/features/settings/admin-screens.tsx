@@ -1,4 +1,4 @@
-import { Download, History } from "lucide-react";
+import { Download } from "@/presentation/components/icons";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { container } from "@/composition/container";
@@ -62,7 +62,7 @@ export async function ActivityScreen({ before, entity }: { before?: string; enti
         ))}
       </nav>
       {rows.length === 0 ? (
-        <EmptyState icon={History} title={t("empty")} />
+        <EmptyState illustration="scroll" title={t("empty")} />
       ) : (
         <ol className="divide-y rounded-xl border bg-card">
           {rows.map((r) => {

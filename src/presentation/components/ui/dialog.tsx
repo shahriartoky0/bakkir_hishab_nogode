@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@/presentation/lib/utils"
-import { XIcon } from "lucide-react"
+import { X as XIcon } from "@/presentation/components/icons"
 import { Dialog as DialogPrimitive } from "radix-ui"
 
 import { Button } from "@/presentation/components/ui/button"

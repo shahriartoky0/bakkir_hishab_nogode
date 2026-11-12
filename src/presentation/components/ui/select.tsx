@@ -2,7 +2,11 @@
 
 import * as React from "react"
 import { cn } from "@/presentation/lib/utils"
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+import {
+  Check as CheckIcon,
+  ChevronDown as ChevronDownIcon,
+  ChevronUp as ChevronUpIcon,
+} from "@/presentation/components/icons"
 import { Select as SelectPrimitive } from "radix-ui"
 
 function Select({

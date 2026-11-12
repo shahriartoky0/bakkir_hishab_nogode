@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut, UserRound } from "lucide-react";
+import { LogOut, UserRound } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useTransition } from "react";
 import { signOutAction } from "../../actions/auth";

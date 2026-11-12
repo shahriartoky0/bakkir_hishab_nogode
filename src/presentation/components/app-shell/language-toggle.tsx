@@ -1,6 +1,6 @@
 "use client";
 
-import { Languages } from "lucide-react";
+import { Languages } from "@/presentation/components/icons";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";

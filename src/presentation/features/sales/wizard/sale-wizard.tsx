@@ -1,6 +1,6 @@
 "use client";
 
-import { Banknote, Check, Loader2, Plus } from "lucide-react";
+import { Banknote, Check, Loader2, Plus } from "@/presentation/components/icons";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useMemo, useState, useTransition } from "react";
@@ -234,7 +234,7 @@ export function SaleWizard({
                     !done && !current && "border-border bg-card text-muted-foreground",
                   )}
                 >
-                  {done ? <Check className="size-4" strokeWidth={3} aria-hidden /> : fmt.number(i + 1)}
+                  {done ? <Check className="size-4" weight="bold" aria-hidden /> : fmt.number(i + 1)}
                 </span>
                 <span className={cn("line-clamp-2 px-0.5 text-center", current ? "font-semibold text-foreground" : "text-muted-foreground")}>
                   {t(`steps.${s}`)}

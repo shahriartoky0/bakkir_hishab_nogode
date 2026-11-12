@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { Ban, Search, UserPlus, X } from "lucide-react";
+import { Ban, Search, UserPlus, X } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { searchCustomersAction } from "../../../actions/customers";

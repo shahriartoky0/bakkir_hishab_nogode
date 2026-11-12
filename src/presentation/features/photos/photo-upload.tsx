@@ -1,6 +1,6 @@
 "use client";
 
-import { Camera, ImagePlus, Loader2, X } from "lucide-react";
+import { Camera, ImagePlus, Loader2, X } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { useEffect, useId, useRef, useState } from "react";
 import { toast } from "sonner";

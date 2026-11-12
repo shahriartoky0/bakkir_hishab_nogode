@@ -1,6 +1,5 @@
 "use client";
 
-import { CalendarCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { AGING_BUCKETS, type AgingBucket } from "@/domain/collections/aging";
@@ -55,7 +54,7 @@ export function TodayView({ sections }: { sections: TodaySections }) {
       </div>
 
       {total === 0 ? (
-        <EmptyState icon={CalendarCheck} title={t("allClear")} body={t("allClearHint")} />
+        <EmptyState illustration="check" title={t("allClear")} body={t("allClearHint")} />
       ) : (
         ORDER.map(({ key, amount }) => {
           const rows = filtered(sections[key]);

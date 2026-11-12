@@ -1,6 +1,6 @@
 "use client";
 
-import { Ban, XCircle } from "lucide-react";
+import { Ban, XCircle } from "@/presentation/components/icons";
 import { useTranslations } from "next-intl";
 import { voidPaymentAction } from "../../actions/payments";
 import { cancelSaleAction } from "../../actions/sales";

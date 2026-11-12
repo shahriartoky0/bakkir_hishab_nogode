@@ -1,7 +1,7 @@
 "use client";
 
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Ban, Search, UserPlus, Users } from "lucide-react";
+import { Ban, Search, UserPlus } from "@/presentation/components/icons";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -102,7 +102,7 @@ export function CustomerList({ initialFilter = "all" }: { initialFilter?: Custom
         <ErrorState onRetry={() => void result.refetch()} />
       ) : items.length === 0 ? (
         <EmptyState
-          icon={Users}
+          illustration="customers"
           title={query ? t("noResults") : t("empty")}
           body={query ? t("noResultsHint") : t("emptyHint")}
           action={

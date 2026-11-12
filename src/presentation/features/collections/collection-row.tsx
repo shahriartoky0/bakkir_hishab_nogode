@@ -1,6 +1,6 @@
 "use client";
 
-import { Banknote, MessageSquarePlus } from "lucide-react";
+import { Banknote, MessageSquarePlus } from "@/presentation/components/icons";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import type { CollectionRow, PromiseRow } from "@/application/ports/queries";
